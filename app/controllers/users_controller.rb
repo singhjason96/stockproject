@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     end
 
     def show
+        @user = User.find(params[:id])
+        # @stocks = @user.stocks
     end
 
     def delete

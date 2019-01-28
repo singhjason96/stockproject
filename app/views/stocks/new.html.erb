@@ -1,0 +1,25 @@
+<% if @errors %>
+<% @errors.each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>
+
+
+<%= form_for @stock, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+    
+    <div class="ticker">
+    <%= f.label :ticker%><br>
+  <%= f.text_field :ticker %>
+  </div>
+  
+  <div class="stop">
+  <%=f.label :stop%><br>
+  <%= f.number_field :stop %>
+  </div>
+  
+  
+
+<div class="button">
+  <%= f.submit "add" %>
+  </div>
+<% end %>

@@ -5,24 +5,26 @@ class StocksController < ApplicationController
 
     def new
         @stock = Stock.new
-        @stock = Stock.find(params[:cohort_id])
     end
 
     def index 
         @stocks = Stock.all
     end
     def create
-        @stock = Stock.new(course_params)
-        @stock_id = params[:stock_id]
+        @stock = Stock.new(stock_params)
+        @stock.user_id = params[:user_id]
         if @stock.valid?
           @stock.save
-          redirect_to "/stock/#{@stock_id}"
-        
+          redirect_to "/users/#{@stock.user_id}"
+        else
+            @errors = @stock.errors.full_messages
+            render 'new'
+        end
       end
     
 
     private 
     def stock_params
-        params.require(:stock).permit(:symbol, :tick, :stop)
+        params.require(:stock).permit(:ticker, :stop)
     end 
 end
