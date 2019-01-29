@@ -7,6 +7,8 @@ class Stock < ApplicationRecord
         begin 
           @quote = IEX::Resources::Quote.get(ticker)
           stop_is_less_than_price(@quote)
+
+          
         rescue 
             errors.add(:ticker, "is not valid")
         end
@@ -19,5 +21,9 @@ class Stock < ApplicationRecord
             errors.add(:stop, "is more than current price of stock: $#{quote.latest_price}")
         end
 
+    end
+
+    def live_price
+        IEX::Resources::Price.get(ticker)
     end
 end

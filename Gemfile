@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'iex-ruby-client'
 gem 'news-api'
 gem 'twilio-ruby'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

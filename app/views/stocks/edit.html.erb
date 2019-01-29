@@ -1,0 +1,17 @@
+<%= form_for @stock, url: {action: "update"}, method: :PATCH do |f| %>
+    <div class="ticker">
+    <%= f.label :ticker%><br>
+  <%= f.text_field :ticker %>
+  </div>
+  
+  <div class="stop">
+  <%=f.label :stop%><br>
+  <%= f.number_field :stop %>
+  </div>
+  
+  
+
+<div class="button">
+  <%= f.submit "Update" %>
+  </div>
+<% end %>

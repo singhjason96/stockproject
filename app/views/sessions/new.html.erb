@@ -1,0 +1,25 @@
+<div class="login">
+<h1>Login</h1>
+</div>
+<% if @error %>
+<p><%=@error%></p>
+<% end %>
+<div class="card-login">
+<%= form_tag "/sessions", method: :post do %>
+    <div class="card-header">
+    <%= label_tag "Username" %>
+    <div class="card-header">
+    <%= text_field_tag :username, nil, class: "", required: true %>
+    <div class="card-header">
+    <%= label_tag "Password" %>
+    <div class="card-header">
+    <%= password_field_tag :password, nil, required: true %>
+    <div class="card-header">
+    
+    <div class="button-login">
+    <%= submit_tag "Log In" %> 
+    </div>
+    <% end %>
+    </div>
+  
+
