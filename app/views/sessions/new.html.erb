@@ -4,7 +4,6 @@
 <% if @error %>
 <p><%=@error%></p>
 <% end %>
-<div class="card-login">
 <%= form_tag "/sessions", method: :post do %>
     <div class="card-header">
     <%= label_tag "Username" %>
@@ -20,6 +19,6 @@
     <%= submit_tag "Log In" %> 
     </div>
     <% end %>
-    </div>
   
 
+    

@@ -1,0 +1,7 @@
+<h1><%= @stock.ticker %></h1>
+<h2>Currently Trading at $<%= @stock.live_price %></h2>
+<h2>Latest Headline: <%= @stock.latest_news %></h2>
+<h2>Dividend Date: <%= @stock.dividends_date%></h2>
+<h2>Dividend Amount <%= @stock.dividends_given %></h2>
+<h2>Estimated EPS $<%= @stock.estimated_eps %></h2>
+<h2>Actual EPS $<%= @stock.get_pe %></h2>

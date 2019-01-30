@@ -26,4 +26,46 @@ class Stock < ApplicationRecord
     def live_price
         IEX::Resources::Price.get(ticker)
     end
+
+    def stock_logo
+        logo = IEX::Resources::Logo.get(ticker)
+    end
+
+    def latest_news
+        news = IEX::Resources::News.get(ticker)
+        latest = news.first
+        latest.headline
+    end
+
+    def dividends_given 
+        dividends = IEX::Resources::Dividends.get(ticker, '6m')
+        if dividends[0] == nil
+           return  '********************  NOPE ************************'
+        else
+            return dividends[0].amount_dollar
+        end  
+    end
+
+    def dividends_date
+        dividends = IEX::Resources::Dividends.get(ticker, '6m')
+        if dividends[0] == nil
+           return  '********************  NOPE ************************'
+        else
+             return dividends[0].payment_date
+        end
+    end
+
+
+
+    def get_pe
+        earnings = IEX::Resources::Earnings.get(ticker)
+        earnings[0].actual_eps
+    end
+
+    def estimated_eps
+        earnings = IEX::Resources::Earnings.get(ticker)
+        earnings[0].estimated_eps
+    end
+ 
+
 end

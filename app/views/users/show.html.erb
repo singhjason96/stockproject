@@ -3,23 +3,38 @@
 <h2><%= @user.username%></h2>
 
 </div>
+<%= link_to "log out", logout_path %>
 <%= link_to "New Stock", new_user_stock_path(@user.id)%>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Stop Price</th>
+        <th scope="col">Live Price</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
 <% if @user.stocks %>
   <% @user.stocks.each do |stock| %>
-   <p><%= stock.ticker %>  
-      <%= stock.stop %>
-      <%= stock.live_price %>
-
-
-
-<%=link_to "Edit", edit_user_stock_path(@user.id, stock) %>
-
-</p>
+    
+    <tbody>
+      <tr class="wrapper">
+        <td><%= link_to stock.ticker, user_stock_path(@user.id, stock) %></td>
+        <td>$<%= stock.stop %></td>
+        <td>$<%= stock.live_price %></td>
+        <td><%=link_to "Edit", edit_user_stock_path(@user.id, stock) %>
+        </td>
+        <td><%= link_to "Delete", user_stock_path(@user.id, stock), remote: true, method: :delete, :class => 'delete_stock' %></td>
+      </tr>
+    </tbody>
     <% end %>
 
     <% end %>
+    </table>
 
 
 
-
+    
+    
+  
     

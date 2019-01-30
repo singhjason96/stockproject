@@ -29,15 +29,6 @@ end
 # p @n.get_top_headlines(sources: "bbc-news")
 
 
-account_sid = "ACe89054f9f9aacfdfe4d21134a456f244"
-auth_token = "b7ed292830a2301be1f9c4c8051c60a8"
 
-@client = Twilio::REST::Client.new(account_sid, auth_token)
-
-# message = @client.messages.create(
-#   body: @quote.latest_price,
-#   to: "+13479811587",
-#   from: "+19083565998"
-# )
 
 
