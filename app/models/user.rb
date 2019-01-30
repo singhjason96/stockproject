@@ -18,8 +18,8 @@ class User < ApplicationRecord
     def stop_alert(live_price, stock)
         p "alerted #{username} of stock stop
         #{stock.ticker} just hit #{live_price} which is under #{stock.stop}"
-        account_sid = "ACe89054f9f9aacfdfe4d21134a456f244"
-        auth_token = "b7ed292830a2301be1f9c4c8051c60a8"
+        account_sid = ENV["TWILIO_ACCOUNT_SID"]
+        auth_token = ENV["TWILIO_AUTH_TOKEN"]
         @message = "Hey  #{stock.ticker} just hit #{live_price} which is under #{stock.stop}"
         @client = Twilio::REST::Client.new(account_sid, auth_token)
 
