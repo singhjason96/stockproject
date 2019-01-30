@@ -3,5 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .table {
     width: 1000px;
-    margin-left: 15%;
+    margin-left: 17%;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.5em;
+    background-color: #e6e6e6;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.user-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Slabo 27px', serif;
+}
+
+.link {
+    background-color: #5cd65c;
+    border: none;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 17%;
+}
+
+.loglink {
+    background-color: #5cd65c;
+    border: none;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.header {
+    background-color: #5cd65c;
 }

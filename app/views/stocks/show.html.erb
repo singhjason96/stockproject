@@ -1,9 +1,34 @@
-<h1><%= @stock.ticker %></h1>
 <%= link_to "Profile", user_path(session[:user_id]) %>
+<div class="company-title"><%= @stock.company_name %> (<%= @stock.ticker %>)</div>
 
-<h2>Currently Trading at $<%= @stock.live_price %></h2>
-<h2>Latest Headline: <%= @stock.latest_news %></h2>
-<h2>Dividend Date: <%= @stock.dividends_date%></h2>
-<h2>Dividend Amount <%= @stock.dividends_given %></h2>
-<h2>Estimated EPS $<%= @stock.estimated_eps %></h2>
-<h2>Actual EPS $<%= @stock.get_pe %></h2>
+<div class="real-time-price">
+$<%= @stock.live_price %>
+</div>
+<table class="table table-dark", id="stocktable">
+  
+  <tbody>
+    <tr>
+      <td>Dividend Date</td>
+      <td><%=@stock.dividends_date%></td>
+    </tr>
+    <tr>
+      <td>Dividend Amount</td>
+      <td><%=@stock.dividends_given%></td>
+    </tr>
+    <tr>
+      <td>Estimated EPS</td>
+      <td><%= @stock.estimated_eps%></td>
+    </tr>
+    <tr>
+      <td>Actual EPS</td>
+      <td><%= @stock.get_pe%></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<div class="news">
+<h2>Latest Headline</h2>
+<%= @stock.latest_news %>
+<div>

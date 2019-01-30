@@ -40,7 +40,7 @@ class Stock < ApplicationRecord
     def dividends_given 
         dividends = IEX::Resources::Dividends.get(ticker, '6m')
         if dividends[0] == nil
-           return  '********************  NOPE ************************'
+           return  "This stock doesn't give dividends"
         else
             return dividends[0].amount_dollar
         end  
@@ -49,7 +49,7 @@ class Stock < ApplicationRecord
     def dividends_date
         dividends = IEX::Resources::Dividends.get(ticker, '6m')
         if dividends[0] == nil
-           return  '********************  NOPE ************************'
+           return  "This stock doesn't give dividends"
         else
              return dividends[0].payment_date
         end
@@ -65,6 +65,11 @@ class Stock < ApplicationRecord
     def estimated_eps
         earnings = IEX::Resources::Earnings.get(ticker)
         earnings[0].estimated_eps
+    end
+
+    def company_name 
+        company = IEX::Resources::Company.get(ticker)
+        company.company_name
     end
  
 
