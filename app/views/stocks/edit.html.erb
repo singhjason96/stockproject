@@ -1,3 +1,6 @@
+<%= link_to "Profile", user_path(session[:user_id]) %>
+
+
 <%= form_for @stock, url: {action: "update"}, method: :PATCH do |f| %>
     <div class="ticker">
     <%= f.label :ticker%><br>

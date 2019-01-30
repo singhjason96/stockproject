@@ -1,4 +1,6 @@
 <h1><%= @stock.ticker %></h1>
+<%= link_to "Profile", user_path(session[:user_id]) %>
+
 <h2>Currently Trading at $<%= @stock.live_price %></h2>
 <h2>Latest Headline: <%= @stock.latest_news %></h2>
 <h2>Dividend Date: <%= @stock.dividends_date%></h2>
