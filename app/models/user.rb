@@ -20,7 +20,7 @@ class User < ApplicationRecord
         #{stock.ticker} just hit #{live_price} which is under #{stock.stop}"
         account_sid = "ACe89054f9f9aacfdfe4d21134a456f244"
         auth_token = ENV["TWILIO_ACCOUNT_AUTH_TOKEN"]
-        @message = "Hey  #{stock.ticker} just hit #{live_price} which is under #{stock.stop}"
+        @message = "Hey, #{stock.ticker} just hit $#{live_price} which is under $#{stock.stop}"
         @client = Twilio::REST::Client.new(account_sid, auth_token)
 
         message = @client.messages.create(
