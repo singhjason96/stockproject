@@ -32,10 +32,22 @@ class Stock < ApplicationRecord
     end
 
     def latest_news
+        news = IEX::Resources::News.get(ticker,5)
+        news.size
+        latest = news.first
+        latest.headline
+        # latest = news.first
+        # latest.headline
+       
+    end
+    
+    def news_url
         news = IEX::Resources::News.get(ticker)
         latest = news.first
         latest.headline
+        latest.url
     end
+
 
     def dividends_given 
         dividends = IEX::Resources::Dividends.get(ticker, '6m')
@@ -55,6 +67,11 @@ class Stock < ApplicationRecord
         end
     end
 
+    def open_price
+        ohlc = IEX::Resources::OHLC.get(ticker) 
+        ohlc.open.price
+    end
+
 
 
     def get_pe
@@ -71,6 +88,14 @@ class Stock < ApplicationRecord
         company = IEX::Resources::Company.get(ticker)
         company.company_name
     end
- 
+    
+    def year_high 
+        key_stats = IEX::Resources::KeyStats.get(ticker)
+        key_stats.week_52_high
+    end
 
+    def market_news
+    end
+
+    
 end

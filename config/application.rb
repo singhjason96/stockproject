@@ -25,8 +25,7 @@ end
 #p @quote.iex_realtime_price
 #p @quote.latest_price
 
-# p @n = News.new("0724762104274b33b676ea01c88ccef5")
-# p @n.get_top_headlines(sources: "bbc-news")
+
 
 
 

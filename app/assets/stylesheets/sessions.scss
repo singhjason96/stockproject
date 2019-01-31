@@ -1,3 +1,59 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form {
+    width: 300px;
+    background-color: #5cd65c;
+    height: 400px;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.5em;
+    margin-left: 42%;
+    margin-top: 7%;
+    position: absolute;
+
+    
+}
+body {
+    background-color: #d9d9d9;
+}
+.logname{
+    padding-top: 7%;
+    text-align: center;
+}
+
+#username{
+    margin-top: 2%;
+    width: 250px;
+}
+
+#password{
+    margin-top: 2%;
+    width: 250px;
+}
+
+.pass{
+    padding-top: 7%; 
+    text-align: center;
+}
+
+.contain{
+    margin-left: 8%;
+
+}
+
+.btn{
+  margin-left: 35%;
+  margin-top: 8%;   
+
+}
+
+input {
+    border: none;
+}
+
+button {
+    margin-left: 37%;
+    width: 70px;
+    border: none;
+    font-size: .75em;
+}

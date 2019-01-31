@@ -10,12 +10,13 @@
 
 #stocktable {
     width: 500px;
-    font-size: 1.5em;
+    font-size: 1em;
     background-color: white;
     color: black;
     margin-left: 4%;
     margin-top: 2%;
     font-family: 'Slabo 27px', serif;
+    height: 50px;
 
 }
 
@@ -33,4 +34,56 @@
     font-family: 'Slabo 27px', serif;
     margin-top: 2%;
     
+}
+
+.stockform {
+    width: 300px;
+    background-color: #5cd65c;
+    text-align: center;
+    margin-left: 40%;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.5em;
+    padding-bottom: 2%;
+    margin-top: 3%;
+    
+
+}
+
+.prof {
+    background-color: #5cd65c;
+    border: none;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 78%;
+    margin-top: 0.5%;
+}
+
+form {
+    width: 300px;
+    background-color: #5cd65c;
+    text-align: center;
+    margin-left: 40%;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.5em;
+    padding-bottom: 2%;
+    margin-top: 5%;
+    position: absolute;
+}
+
+.backbutton {
+    background-color: #5cd65c;
+    border: none;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 79%;
+    position: absolute;
+    margin-bottom: 5%;
+    margin-top: 0.5%;
+
 }

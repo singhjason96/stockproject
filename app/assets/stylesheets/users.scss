@@ -17,6 +17,7 @@ h2 {
     text-align: center;
     font-size: 2em;
     font-family: 'Slabo 27px', serif;
+    margin-top: 4%;
 }
 
 .link {
@@ -28,6 +29,7 @@ h2 {
     display: inline-block;
     font-size: 16px;
     margin-left: 17%;
+
 }
 
 .loglink {
@@ -38,10 +40,35 @@ h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 79%;
+    position: absolute;
+    margin-bottom: 5%;
+    margin-top: 0.5%;
 }
 
 .header {
     background-color: #5cd65c;
 }
+
+.userform {
+    width: 450px;
+    background-color: #5cd65c;  
+    text-align: center;
+    margin-left: 38%;
+    margin-top: 3%;
+    font-family: 'Slabo 27px', serif;
+    padding-bottom: 2%;
+    font-size: 1.5em;
+    position: absolute;
+
+}
+
+.button {
+    margin-top: 2%;
+    
+}
+
+.stockbtn {
+    background-color: #5cd65c;
+}
+

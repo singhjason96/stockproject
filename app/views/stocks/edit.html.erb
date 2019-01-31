@@ -1,4 +1,4 @@
-<%= link_to "Profile", user_path(session[:user_id]) %>
+<%= link_to "Profile", user_path(session[:user_id]), :class => "backbutton" %>
 
 
 <%= form_for @stock, url: {action: "update"}, method: :PATCH do |f| %>

@@ -1,5 +1,6 @@
-<%= link_to "Profile", user_path(session[:user_id]) %>
+<%= link_to "Profile", user_path(session[:user_id]), :class => 'prof' %>
 <div class="company-title"><%= @stock.company_name %> (<%= @stock.ticker %>)</div>
+<%= @stock.market_news %>
 
 <div class="real-time-price">
 $<%= @stock.live_price %>
@@ -7,6 +8,10 @@ $<%= @stock.live_price %>
 <table class="table table-dark", id="stocktable">
   
   <tbody>
+  <tr>
+      <td>Open Price</td>
+      <td>$<%=@stock.open_price%></td>
+    </tr>
     <tr>
       <td>Dividend Date</td>
       <td><%=@stock.dividends_date%></td>
@@ -17,11 +22,15 @@ $<%= @stock.live_price %>
     </tr>
     <tr>
       <td>Estimated EPS</td>
-      <td><%= @stock.estimated_eps%></td>
+      <td>$<%= @stock.estimated_eps%></td>
     </tr>
     <tr>
       <td>Actual EPS</td>
-      <td><%= @stock.get_pe%></td>
+      <td>$<%= @stock.get_pe%></td>
+    </tr>
+    <tr>
+      <td>52 Week High</td>
+      <td>$<%= @stock.year_high%></td>
     </tr>
   </tbody>
 </table>
@@ -29,6 +38,6 @@ $<%= @stock.live_price %>
 
 
 <div class="news">
-<h2>Latest Headline</h2>
-<%= @stock.latest_news %>
+<h2>Latest News</h2>
+<a href="<%= @stock.news_url%>"><%= @stock.latest_news %></a>
 <div>
