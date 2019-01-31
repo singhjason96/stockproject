@@ -1,8 +1,10 @@
+<div class="animated flash sleep-2s", id="error">
 <% if @errors %>
 <% @errors.each do |error| %>
     <p><%= error %></p>
     <% end %>
 <% end %>
+</div>
 
 
 <%= form_for @stock, url: {action: "create"}, html: {class: "stockform"} do |f| %>
