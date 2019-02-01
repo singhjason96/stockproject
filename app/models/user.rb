@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
         message = @client.messages.create(
         body: @message,
-        to: "+13479811587",
+        to: "+#{phone_number}",
         from: "+19083565998"
         )
     end
