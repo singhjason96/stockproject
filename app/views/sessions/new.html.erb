@@ -3,29 +3,34 @@
 <p><%=@error%></p>
 <% end %>
 
-<%= form_tag "/sessions", :class => 'form',  method: :post do  %>
-    <div class="contain">
+<div id="big-container" class="big-container">
+  <div class="title-block">
+  <div class="form-container">
+    <h1 class="form-title">The Money Train</h1>
+    </div>
+    <div class="small-container">
+  <%= form_tag "/sessions", :class => 'form',  method: :post do  %>
     <div class="logname">
     <%= label_tag "Username" %>
     </div>
     <%= text_field_tag :username, nil, class: "", required: true %>
-  
+
     <div class="pass">
     <%= label_tag "Password" %>
     </div>
     <%= password_field_tag :password, nil, required: true %>
-    
+
 
     <div class="btn">
-    <%= submit_tag  "Log In"%> 
+    <%= submit_tag  "Log In"%>
   </div>
-
+<h6>OR<h6>
   <div class="signup">
-  <%= link_to '<button type="button">Sign Up</button>'.html_safe, new_user_path %>  
+  <%= link_to '<button type="button">Sign Up</button>'.html_safe, new_user_path %>
 
   </div>
-   
-    <% end %>
-  
 
-    
+    <% end %>
+    </div>
+    </div>
+  </div>

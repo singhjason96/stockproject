@@ -1,6 +1,10 @@
-
+<div id="user-form-container" class="user-form-container">
+  <div class="title-block">
+  <div class="form-container">
+    <h1 class="form-title">Sign Up</h1>
+    </div>
 <%= form_for @user, url: {action: "create"}, html: {class: "userform"} do |f| %>
-    
+
     <div class="username">
     <%= f.label :username%><br>
   <%= f.text_field :username %>
@@ -15,7 +19,7 @@
     <%= f.label :lastname%><br>
   <%= f.text_field :last_name %>
   </div>
-  
+
   <div class="email">
   <%=f.label :email%><br>
   <%= f.text_field :email %>
@@ -33,9 +37,10 @@
   <%=f.label :password_confirmation%><br>
   <%= f.password_field :password_confirmation %>
   </div>
-  
+
 
 <div class="button">
   <%= f.submit "Join" %>
   </div>
 <% end %>
+</div>

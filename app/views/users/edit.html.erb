@@ -1,3 +1,43 @@
+<%= form_for @user, method: :PATCH, url: {action: "update"}, html: {class: "userform"} do |f| %>
+    
+    <div class="username">
+    <%= f.label :username%><br>
+  <%= f.text_field :username %>
+  </div>
+
+  <div class="firstname">
+    <%= f.label :firstname%><br>
+  <%= f.text_field :first_name %>
+  </div>
+
+  <div class="lastname">
+    <%= f.label :lastname%><br>
+  <%= f.text_field :last_name %>
+  </div>
+  
+  <div class="email">
+  <%=f.label :email%><br>
+  <%= f.text_field :email %>
+  </div>
+  <div class="phonenumber">
+  <%= f.label :phone_number%><br>
+  <%= f.text_field :phone_number %>
+  </div>
+  <div class="password">
+  <%=f.label :password%><br>
+  <%= f.password_field :password %>
+  </div>
+
+  <div class="confirmpassword">
+  <%=f.label :password_confirmation%><br>
+  <%= f.password_field :password_confirmation %>
+  </div>
+  
+
+<div class="button">
+  <%= f.submit "Join" %>
+  </div>
+<% end %>
 
 
 

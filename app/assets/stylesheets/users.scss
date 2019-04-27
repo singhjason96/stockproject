@@ -50,25 +50,36 @@ h2 {
     background-color: #5cd65c;
 }
 
-.userform {
-    width: 450px;
-    background-color: #5cd65c;  
-    text-align: center;
-    margin-left: 38%;
-    margin-top: 3%;
-    font-family: 'Slabo 27px', serif;
-    padding-bottom: 2%;
-    font-size: 1.5em;
-    position: absolute;
+.user-form-container {
+  color: #262626;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 12px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#user-form-container {
+  width: 100%;
 }
 
 .button {
     margin-top: 2%;
-    
-}
+    margin-bottom: 3%;
 
+}
 .stockbtn {
     background-color: #5cd65c;
 }
 
+.userform{
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}

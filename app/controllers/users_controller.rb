@@ -36,6 +36,7 @@ class UsersController < ApplicationController
         if @user.update(user_params)
           redirect_to "/users/#{@user.id}/stocks", notice: 'Updated'
         end
+        
       end
 
     

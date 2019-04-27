@@ -1,8 +1,11 @@
 <%= link_to "Log Out", logout_path, :class => 'loglink' %>
+<%=link_to "Edit", edit_user_path(@user.id) %>
+
 <br>
 <div class="user-title">
 <h2><%= @user.username%></h2>
 </div>
+
 
 <table class="table">
     <thead>
