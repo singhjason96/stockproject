@@ -41,7 +41,10 @@
 
     <% end %>
     </table>
-
-    <div id="stock-button">
+    <div id="bottom" class="bottom">
+  <div id="container-left">
+    <div id="stock-button" class="stock-button">
    <%= link_to "New Stock", new_user_stock_path(@user.id), :class => 'stocklink'%>
    </div>
+  </div>
+  </div>

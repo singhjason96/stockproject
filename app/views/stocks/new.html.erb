@@ -6,22 +6,30 @@
 <% end %>
 </div>
 
-
+<div id="new-stock-container" class="new-stock-container">
+  <div class="big-title-container">
+  <div class="new-stock-form-container">
+    <h1 class="form-top-title">Choose A Stock</h1>
+  </div>
+  <div class="medium-container">
 <%= form_for @stock, url: {action: "create"}, html: {class: "stockform"} do |f| %>
-    
+
     <div class="ticker">
     <%= f.label :ticker%><br>
   <%= f.text_field :ticker %>
   </div>
-  
+
   <div class="stop">
   <%=f.label :stop%><br>
   <%= f.number_field :stop %>
   </div>
-  
-  
+
+
 
 <div class="button">
   <%= f.submit "add" %>
   </div>
 <% end %>
+</div>
+</div>
+</div>
