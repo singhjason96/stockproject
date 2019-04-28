@@ -4,12 +4,12 @@ class Stock < ApplicationRecord
 
     def ticker_exists
         #call api to make sure ticker exists
-        begin 
+        begin
           @quote = IEX::Resources::Quote.get(ticker)
           stop_is_less_than_price(@quote)
 
-          
-        rescue 
+
+        rescue
             errors.add(:ticker, "is not valid")
         end
 
@@ -38,9 +38,9 @@ class Stock < ApplicationRecord
         latest.headline
         # latest = news.first
         # latest.headline
-       
+
     end
-    
+
     def news_url
         news = IEX::Resources::News.get(ticker)
         latest = news.first
@@ -49,13 +49,13 @@ class Stock < ApplicationRecord
     end
 
 
-    def dividends_given 
+    def dividends_given
         dividends = IEX::Resources::Dividends.get(ticker, '6m')
         if dividends[0] == nil
            return  "This stock doesn't give dividends"
         else
             return dividends[0].amount_dollar
-        end  
+        end
     end
 
     def dividends_date
@@ -68,28 +68,20 @@ class Stock < ApplicationRecord
     end
 
     def open_price
-        ohlc = IEX::Resources::OHLC.get(ticker) 
+        ohlc = IEX::Resources::OHLC.get(ticker)
         ohlc.open.price
     end
 
 
 
-    def get_pe
-        earnings = IEX::Resources::Earnings.get(ticker)
-        earnings[0].actual_eps
-    end
 
-    def estimated_eps
-        earnings = IEX::Resources::Earnings.get(ticker)
-        earnings[0].estimated_eps
-    end
 
-    def company_name 
+    def company_name
         company = IEX::Resources::Company.get(ticker)
         company.company_name
     end
-    
-    def year_high 
+
+    def year_high
         key_stats = IEX::Resources::KeyStats.get(ticker)
         key_stats.week_52_high
     end
@@ -97,5 +89,5 @@ class Stock < ApplicationRecord
     def market_news
     end
 
-    
+
 end

@@ -1,13 +1,18 @@
-<%= link_to "Log Out", logout_path, :class => 'loglink' %>
-<%=link_to "Edit", edit_user_path(@user.id) %>
+<header>
+  <div id="header-container">
+    <div id="user-title" class="title"><%= @user.username%></div>
+    <div id="button-container-right">
+      <div id="logout-button">
+      <%= link_to "Log Out", logout_path, :class => 'loglink' %>
+      </div>
+      <div id="button-edit">
+      <%=link_to "Edit", edit_user_path(@user.id), :class=> 'editlink' %>
+      </div>
+    </div>
+  </div>
+</header>
 
-<br>
-<div class="user-title">
-<h2><%= @user.username%></h2>
-</div>
-
-
-<table class="table">
+<table id="table" class="table">
     <thead>
       <tr class="header">
         <th scope="col">Symbol</th>
@@ -20,7 +25,7 @@
     </thead>
 <% if @user.stocks %>
   <% @user.stocks.each do |stock| %>
-    
+
     <tbody>
       <tr class="wrapper">
         <td><%= link_to stock.ticker, user_stock_path(@user.id, stock) %></td>
@@ -36,12 +41,7 @@
 
     <% end %>
     </table>
-   <%= link_to "New Stock", new_user_stock_path(@user.id), :class => 'link'%>
 
-
-
-
-    
-    
-  
-    
+    <div id="stock-button">
+   <%= link_to "New Stock", new_user_stock_path(@user.id), :class => 'stocklink'%>
+   </div>

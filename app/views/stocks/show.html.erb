@@ -6,7 +6,7 @@
 $<%= @stock.live_price %>
 </div>
 <table class="table table-dark", id="stocktable">
-  
+
   <tbody>
   <tr>
       <td>Open Price</td>
@@ -20,14 +20,8 @@ $<%= @stock.live_price %>
       <td>Dividend Amount</td>
       <td><%=@stock.dividends_given%></td>
     </tr>
-    <tr>
-      <td>Estimated EPS</td>
-      <td>$<%= @stock.estimated_eps%></td>
-    </tr>
-    <tr>
-      <td>Actual EPS</td>
-      <td>$<%= @stock.get_pe%></td>
-    </tr>
+
+    
     <tr>
       <td>52 Week High</td>
       <td>$<%= @stock.year_high%></td>
