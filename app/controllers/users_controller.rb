@@ -9,14 +9,14 @@ class UsersController < ApplicationController
     end
 
 
-    def create 
+    def create
         @user = User.new(user_params)
         if @user.valid?
           @user.save
           session[:user_id] = @user.id
           redirect_to "/users/#{@user.id}"
         else
-         
+
           render 'new'
         end
       end
@@ -28,18 +28,18 @@ class UsersController < ApplicationController
 
       def index
         @users = User.all
-    
+
       end
 
       def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-          redirect_to "/users/#{@user.id}/stocks", notice: 'Updated'
+          redirect_to "/users/#{@user.id}", notice: 'Updated'
         end
-        
+
       end
 
-    
+
 
     def delete
     end
