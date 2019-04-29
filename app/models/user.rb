@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-    has_many :stocks    
+    has_many :stocks
     has_secure_password
+    
     def self.global_stock_update
         @users = User.all
         @users.each do |user|
             user.stocks.each do |stock|
                @live_price = IEX::Resources::Price.get(stock.ticker)
-               if @live_price <= stock.stop 
+               if @live_price <= stock.stop
                 user.stop_alert(@live_price, stock)
                end
 
@@ -14,7 +15,7 @@ class User < ApplicationRecord
 
         end
     end
-    
+
     def stop_alert(live_price, stock)
         p "alerted #{username} of stock stop
         #{stock.ticker} just hit #{live_price} which is under #{stock.stop}"
@@ -25,11 +26,11 @@ class User < ApplicationRecord
 
         message = @client.messages.create(
         body: @message,
-        to: "+#{phone_number}",
+        to: "+1#{phone_number}",
         from: "+19083565998"
         )
     end
 
-    
+
 
 end
