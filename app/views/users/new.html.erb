@@ -1,3 +1,11 @@
+<div class="error", id="error">
+<% if @errors %>
+<% @errors.each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>
+
+</div>
 <div id="user-form-container" class="user-form-container">
   <div class="title-block">
   <div class="form-container">

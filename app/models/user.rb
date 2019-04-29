@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_many :stocks
     has_secure_password
     
+
     def self.global_stock_update
         @users = User.all
         @users.each do |user|
