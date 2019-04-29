@@ -1,20 +1,40 @@
-<%= link_to "Profile", user_path(session[:user_id]), :class => "backbutton" %>
+<header>
+  <div id="header-container">
+    <div id="button-container-right">
+      <div id="logout-button">
+      <%= link_to "Log Out", logout_path, :class => 'loglink' %>
+      </div>
+      <div id="button-edit">
+        <%= link_to "Profile", user_path(session[:user_id]), :class => "backbutton" %>
+      </div>
+    </div>
+  </div>
+</header>
 
+<div id="new-stock-container" class="new-stock-container">
+  <div class="big-title-container">
+  <div class="new-stock-form-container">
+    <h1 class="form-top-title">Edit Stock</h1>
+  </div>
+  <div class="medium-container">
 
-<%= form_for @stock, url: {action: "update"}, method: :PATCH do |f| %>
+<%= form_for @stock, url: {action: "update"}, html: {class: "stockform"}, method: :PATCH do |f| %>
     <div class="ticker">
     <%= f.label :ticker%><br>
   <%= f.text_field :ticker %>
   </div>
-  
+
   <div class="stop">
   <%=f.label :stop%><br>
   <%= f.number_field :stop, step: :any  %>
   </div>
-  
-  
+
+
 
 <div class="button">
   <%= f.submit "Update" %>
   </div>
 <% end %>
+</div>
+</div>
+</div>

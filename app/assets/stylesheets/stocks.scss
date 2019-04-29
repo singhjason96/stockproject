@@ -30,32 +30,21 @@
   margin-right: auto;
 }
 
-#stocktable {
-    width: 500px;
-    font-size: 1em;
-    background-color: white;
-    color: black;
-    margin-left: 4%;
-    margin-top: 2%;
-    font-family: 'Slabo 27px', serif;
-    height: 50px;
 
-}
 
 .news {
-    font-size: 2em;
-    margin-top: 2%;
-    font-family: 'Slabo 27px', serif;
-    margin-left: 4%;
-
+  position: relative;
+  width: 100%;
+  margin-top: 3%;
 }
 
-.real-time-price {
-    margin-left: 4%;
-    font-size: 3em;
-    font-family: 'Slabo 27px', serif;
-    margin-top: 2%;
-
+#news {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Old Standard TT', serif;
 }
 
 .new-stock-form-container {
@@ -74,33 +63,6 @@
   text-align: center;
   font-family: 'Old Standard TT', serif;
   color: #fff;
-}
-.prof {
-    background-color: #5cd65c;
-    border: none;
-    padding: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 78%;
-    margin-top: 0.5%;
-}
-
-
-.backbutton {
-    background-color: #5cd65c;
-    border: none;
-    padding: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 79%;
-    position: absolute;
-    margin-bottom: 5%;
-    margin-top: 0.5%;
-
 }
 
 .medium-container {
@@ -143,4 +105,59 @@ input[type=number] {
   justify-content: center;
   text-align: center;
   font-family: 'Arial', sans-serif;
+}
+
+.backbutton {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Old Standard TT', serif;
+  color: #fff;
+}
+
+.prof{
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Old Standard TT', serif;
+  color: #fff;
+}
+
+#name-container {
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    margin-top: 2%;
+}
+
+.name-container {
+  position: relative;
+  width: 100%;
+}
+
+#real-time-price {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Old Standard TT', serif;
+}
+
+.real-time-price {
+  position: relative;
+  width: 100%;
+  margin-top: 1%;
+}
+
+.stocktable {
+  position: relative;
+  width: 100%;
+  margin-top: 1%;
+}
+
+#stocktable {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Old Standard TT', serif;
 }

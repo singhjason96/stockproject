@@ -1,11 +1,23 @@
-<%= link_to "Profile", user_path(session[:user_id]), :class => 'prof' %>
+<header>
+  <div id="header-container">
+    <div id="user-title" class="title"><%= @stock.company_name%></div>
+    <div id="button-container-right">
+      <div id="button-edit">
+        <%= link_to "Profile", user_path(session[:user_id]), :class => 'prof' %>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="name-container" class="name-container">
 <div class="company-title"><%= @stock.company_name %> (<%= @stock.ticker %>)</div>
+</div>
 <%= @stock.market_news %>
 
-<div class="real-time-price">
+<div id="real-time-price" class="real-time-price">
 $<%= @stock.live_price %>
 </div>
-<table class="table table-dark", id="stocktable">
+
+<table class="stocktable", id="stocktable">
 
   <tbody>
   <tr>
@@ -21,7 +33,7 @@ $<%= @stock.live_price %>
       <td><%=@stock.dividends_given%></td>
     </tr>
 
-    
+
     <tr>
       <td>52 Week High</td>
       <td>$<%= @stock.year_high%></td>
@@ -31,7 +43,7 @@ $<%= @stock.live_price %>
 
 
 
-<div class="news">
+<div id="news" class="news">
 <h2>Latest News</h2>
 <a href="<%= @stock.news_url%>"><%= @stock.latest_news %></a>
 <div>
