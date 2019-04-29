@@ -1,5 +1,12 @@
+<div id="new-stock-container" class="new-stock-container">
+  <div id="new-stock-container" class="new-stock-container">
+    <div class="big-title-container">
+    <div class="new-stock-form-container">
+      <h1 class="form-top-title">Edit Your Profile</h1>
+    </div>
+    <div class="medium-container">
 <%= form_for @user, method: :PATCH, url: {action: "update"}, html: {class: "userform"} do |f| %>
-    
+
     <div class="username">
     <%= f.label :username%><br>
   <%= f.text_field :username %>
@@ -14,7 +21,7 @@
     <%= f.label :lastname%><br>
   <%= f.text_field :last_name %>
   </div>
-  
+
   <div class="email">
   <%=f.label :email%><br>
   <%= f.text_field :email %>
@@ -32,12 +39,12 @@
   <%=f.label :password_confirmation%><br>
   <%= f.password_field :password_confirmation %>
   </div>
-  
+
 
 <div class="button">
   <%= f.submit "Join" %>
   </div>
 <% end %>
-
-
-
+</div>
+</div>
+</div>
