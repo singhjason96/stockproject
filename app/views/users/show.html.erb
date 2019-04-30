@@ -13,7 +13,6 @@
 </header>
 
 <table id="table" class="table">
-    <thead>
       <tr class="header">
         <th scope="col">Symbol</th>
         <th scope="col">Company</th>
@@ -22,21 +21,23 @@
         <th scope="col">Update</th>
         <th scope="col">Remove</th>
       </tr>
-    </thead>
 <% if @user.stocks %>
   <% @user.stocks.each do |stock| %>
-
-    <tbody>
-      <tr class="wrapper">
+      <tr>
         <td><%= link_to stock.ticker, user_stock_path(@user.id, stock) %></td>
+
         <td><%= stock.company_name %></td>
+
+
         <td>$<%= stock.stop %></td>
+
         <td>$<%= stock.live_price %></td>
+
         <td><%=link_to "Edit", edit_user_stock_path(@user.id, stock) %>
         </td>
+
         <td><%= link_to "Delete", user_stock_path(@user.id, stock), remote: true, method: :delete, :class => 'delete_stock' %></td>
-      </tr>
-    </tbody>
+        </tr>
     <% end %>
 
     <% end %>

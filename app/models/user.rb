@@ -1,7 +1,9 @@
 class User < ApplicationRecord
     has_many :stocks
     has_secure_password
-    
+    validates :username, :first_name, :last_name, :email, :phone_number, presence: true
+
+
 
     def self.global_stock_update
         @users = User.all
@@ -31,7 +33,5 @@ class User < ApplicationRecord
         from: "+19083565998"
         )
     end
-
-
 
 end
