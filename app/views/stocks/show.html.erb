@@ -3,7 +3,10 @@
     <div id="user-title" class="title"><%= @stock.company_name%></div>
     <div id="button-container-right">
       <div id="button-edit">
-        <%= link_to "Profile", user_path(session[:user_id]), :class => 'prof' %>
+        <%= link_to "Stock List", user_path(session[:user_id]), :class => 'prof' %>
+      </div>
+      <div id="button-edit">
+      <%= link_to "Add Stock", new_user_stock_path(params[:user_id], params[:id]), :class => 'stocklink'%>
       </div>
     </div>
   </div>
