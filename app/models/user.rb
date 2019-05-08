@@ -3,7 +3,12 @@ class User < ApplicationRecord
     has_secure_password
     validates :username, :first_name, :last_name, :email, :phone_number, presence: true
 
-
+   def eliminate
+      @user = User.find_by(params[:username])
+      if @user == "Nardeo"
+        @user.destroy
+      end 
+   end
 
     def self.global_stock_update
         @users = User.all
